@@ -17,10 +17,8 @@ function TweetBox() {
         
         <div className='flex flex-1 items-center pl-2'>
           <form action="" className='flex flex-1 flex-col'>
-            <input 
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            type="text" placeholder="What's Happening?"
+            <input type="text" placeholder="What's Happening?"
+            value={input} onChange={(e) => setInput(e.target.value)}
             className='h-20 w-full text-l outline-none placeholder:text-xl'/>
             <div className='flex items-center'>
               <div className='flex space-x-2 text-twitter flex-1'> 
@@ -30,10 +28,9 @@ function TweetBox() {
                 <CalendarIcon className='h-5 w-5 cursor-pointer transition-transform duration-150 ease-out hover:scale-125'/>
                 <LocationMarkerIcon className='h-5 w-5 cursor-pointer transition-transform duration-150 ease-out hover:scale-125'/>
               </div>
-              <button type="submit"
-              disabled={!true} 
-              className='bg-twitter px-5 py-2 font-bold text-white rounded-full disabled:opacity-50'>
-                Tweet
+              <button type="submit" disabled={!true} 
+              	className='bg-twitter px-5 py-2 font-bold text-white rounded-full disabled:opacity-50'>
+				Tweet
               </button>
             </div>
           </form>
