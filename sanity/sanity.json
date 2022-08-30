@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "nextjs-twitter-clone"
+    "name": "twitter-clone-nextjs"
   },
   "api": {
-    "projectId": "ogjf7g6i",
+    "projectId": "9rb5keno",
     "dataset": "production"
   },
   "plugins": [
