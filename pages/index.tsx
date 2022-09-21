@@ -11,9 +11,9 @@ interface Props {
 }
 
 const Home = ({tweets}: Props) => {
-  console.log(tweets);
+  // console.log(tweets);
   return (
-    <div className="lg:max-w-6xl mx-auto max-h-screen overflow-hidden">
+    <div className="lg:max-w-6xl mx-auto max-h-screen">
       <Head>
         <title>Twitter 2.0</title>
       </Head>

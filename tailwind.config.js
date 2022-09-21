@@ -1,3 +1,7 @@
+const { NodeNextRequest } = require('next/dist/server/base-http/node');
+const { default: plugin } = require('tailwindcss');
+
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -11,5 +15,7 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+
+  ],
 }
