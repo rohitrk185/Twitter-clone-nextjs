@@ -48,7 +48,7 @@ function Tweet({tweet}: Props) {
 
 					 {tweet.image && (
 						<img 
-						src={tweet.image} 
+						src={tweet.image}
 						alt="Tweet Image"
 						className='m-5 ml-0 mb-1 max-h-60 rounded-lg object-cover shadow-sm'/>
 					 )}

@@ -8,8 +8,7 @@ interface Props {
 
 function SidebarRow({Icon, title, onClick}: Props) {
   return (
-    <div 
-      onClick={() => onClick?.()}
+    <div onClick={() => onClick?.()}
       className='flex max-w-fit items-center px-4 py-3 rounded-full 
       hover:bg-gray-100 transition-all duration-200 group cursor-pointer '>
         <Icon className='h-6 w-6'/>
