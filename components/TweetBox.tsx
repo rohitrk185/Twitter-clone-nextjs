@@ -29,7 +29,7 @@ function TweetBox( { setTweets }: Props) {
 	
 	const imageInputRef = useRef<HTMLInputElement>(null);
 
-	const addImageToTweet = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+	const addImageToTweet = (e: React.MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
 		e.preventDefault();
 		if(!imageInputRef.current?.value) return;
 
@@ -63,7 +63,7 @@ function TweetBox( { setTweets }: Props) {
 		return json;
 	}
 
-	const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>)=> {
+	const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, globalThis.MouseEvent>)=> {
 		e.preventDefault();
 		postTweet();
 		setImage('');
@@ -95,7 +95,7 @@ function TweetBox( { setTweets }: Props) {
                 		<LocationMarkerIcon className='h-5 w-5 cursor-pointer transition-transform duration-150 ease-out hover:scale-125'/>
               		</div>
               		<button type="submit" 
-					disabled={(!input || !session) && !image}
+					disabled={!input || !session}
 					onClick={handleSubmit} 
 					className='bg-twitter px-5 py-2 font-bold text-white rounded-full disabled:opacity-40'>
 						Tweet
