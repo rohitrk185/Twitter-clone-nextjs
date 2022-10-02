@@ -27,6 +27,7 @@ function Tweet({tweet}: Props) {
 	const refreshComments = async () => {
 		console.log(comments.length);
 		const comments_: Comment[] = await fetchComments(tweet._id);
+		console.log(comments_.length);
 		console.log(comments.length);
 		setComments(comments_);
 	};
