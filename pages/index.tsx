@@ -1,4 +1,4 @@
-import type { GetServerSideProps, NextPage } from 'next'
+import type { GetServerSideProps, GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import Sidebar from '../components/Sidebar'
 import Feed from '../components/Feed'
@@ -34,7 +34,7 @@ const Home = ({tweets}: Props) => {
 
 export default Home
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetStaticProps = async (context) => {
   // context.res.setHeader(
   //   'Cache-Control',
   //   'public, s-maxage=10, stale-while-revalidate=59'
@@ -44,6 +44,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     props: {
       tweets,
     },
-    // revalidate: 10,
+    revalidate: 10,
   };
 };
