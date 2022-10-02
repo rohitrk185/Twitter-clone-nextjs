@@ -72,8 +72,8 @@ function Tweet({tweet, tweets}: Props) {
 		setInput(''),
 		setCommentBoxVisible(false);
 
-		refreshComments();
 		refreshData();
+		refreshComments();
 		console.log('comment added and refresh done!');
 	};
 

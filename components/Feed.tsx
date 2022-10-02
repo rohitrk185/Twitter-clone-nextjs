@@ -24,11 +24,11 @@ function Feed({tweets : tweetsProp} : Props) {
 
     const tweets = await fetchTweets();
     setTweets(tweets);
-    refreshData();
-
+    
     toast.success('Feed Updated!', {
       id: refreshToast,
     })
+    refreshData();
   };
 
   return <div 
