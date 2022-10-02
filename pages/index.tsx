@@ -34,7 +34,7 @@ const Home = ({tweets}: Props) => {
 
 export default Home
 
-export const getServerSideProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
   // context.res.setHeader(
   //   'Cache-Control',
   //   'public, s-maxage=10, stale-while-revalidate=59'
@@ -44,6 +44,6 @@ export const getServerSideProps: GetStaticProps = async (context) => {
     props: {
       tweets,
     },
-    revalidate: 10,
+    // revalidate: 10,
   };
 };
