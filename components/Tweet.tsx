@@ -8,6 +8,7 @@ import {
 	SwitchHorizontalIcon, UploadIcon
 } from '@heroicons/react/outline'
 import { fetchComments } from '../utils/fetchComments'
+import { useRouter } from 'next/router'
 
 
 interface Props {
@@ -24,6 +25,12 @@ function Tweet({tweet, tweets}: Props) {
 	const [input, setInput] = useState<string>('');
 
 	const { data: session } = useSession();
+
+	const router = useRouter();
+
+  	const refreshData = () => {
+    	router.replace(router.asPath);
+  	};
 	
 	const refreshComments = async () => {
 		console.log(comments.length);
@@ -36,10 +43,6 @@ function Tweet({tweet, tweets}: Props) {
 	useEffect(() => {
 		refreshComments();
 	}, []);
-
-	useEffect(() => {
-		refreshComments();
-	}, [tweets]);
 	
 	// console.log(comments);
 
@@ -69,15 +72,8 @@ function Tweet({tweet, tweets}: Props) {
 		setInput(''),
 		setCommentBoxVisible(false);
 
-		const id = setTimeout(() => {
-			refreshComments();
-			cleartimeout();
-		}, 2000);
-
-		const cleartimeout = () => {
-			clearTimeout(id);
-		}
-
+		refreshComments();
+		refreshData();
 		console.log('comment added and refresh done!');
 	};
 
