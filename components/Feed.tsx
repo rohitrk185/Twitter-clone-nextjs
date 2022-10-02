@@ -5,6 +5,7 @@ import TweetBox from './TweetBox'
 import TweetComponent from '../components/Tweet'
 import { fetchTweets } from '../utils/fetchTweets'
 import toast from 'react-hot-toast'
+import { useRouter } from 'next/router'
 
 interface Props{
   tweets: Tweet[]
@@ -12,12 +13,18 @@ interface Props{
 
 function Feed({tweets : tweetsProp} : Props) {
   const [tweets, setTweets] = useState<Tweet[]>(tweetsProp);
+  const router = useRouter();
+
+  const refreshData = () => {
+    router.replace(router.asPath);
+  };
 
   const handleRefresh = async () => {
     const refreshToast = toast.loading('Refreshing...');
 
     const tweets = await fetchTweets();
     setTweets(tweets);
+    refreshData();
 
     toast.success('Feed Updated!', {
       id: refreshToast,

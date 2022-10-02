@@ -13,6 +13,7 @@ interface Props {
 
 const Home = ({tweets}: Props) => {
   // console.log(tweets);
+
   return (
     <div className="lg:max-w-6xl mx-auto max-h-screen">
       <Head>
@@ -40,6 +41,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   // )
   const tweets = await fetchTweets();
   return {
-    props: {tweets}
+    props: {
+      tweets,
+    },
+    // revalidate: 10,
   };
 };
