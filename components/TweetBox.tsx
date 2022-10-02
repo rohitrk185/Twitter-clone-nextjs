@@ -18,10 +18,11 @@ import { fetchTweets } from '../utils/fetchTweets';
 import { toast } from 'react-hot-toast';
 
 interface Props {
-	setTweets: React.Dispatch<React.SetStateAction<Tweet[]>>
+	setTweets: React.Dispatch<React.SetStateAction<Tweet[]>>,
+	handleRefresh: () => Promise<void>
 };
 
-function TweetBox( { setTweets }: Props) {
+function TweetBox( { setTweets, handleRefresh }: Props) {
   	const [input, setInput] = useState<string>('');
 	const [image, setImage] = useState<string>('');
 	const {data: session} = useSession();
@@ -60,6 +61,7 @@ function TweetBox( { setTweets }: Props) {
 		toast.success('Tweet Posted🤘', {
 			id: postToast,
 		});
+		handleRefresh();
 		return json;
 	}
 
