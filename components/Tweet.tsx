@@ -73,10 +73,8 @@ function Tweet({tweet}: Props) {
                 <div className='flex items-center space-x-1'>
                     <p className='mr-1 font-bold'> {tweet.username} </p>
                     <p className='hidden text-sm text-gray-500 sm:inline'> @{tweet.username.replace(/\s+/g, '').toLowerCase()}. </p>
-					{/* <span>
-						<TimeAgo date={tweet._createdAt}
-                        	className='text-sm text-gray-500'/>
-					</span> */}
+					<TimeAgo date={tweet._createdAt}
+						className='text-sm text-gray-500'/>
                 </div>
 
 					 <p className='pt-1'>{tweet.text}</p>
