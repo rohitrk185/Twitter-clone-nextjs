@@ -101,8 +101,8 @@ function TweetBox( { setTweets }: Props) {
 						Tweet
               		</button>
 				</div>
-
-				{imageUrlBoxIsOpen && (
+			</form>
+			{imageUrlBoxIsOpen && (
 					<form action='' 
 					className='mt-5 flex rounded-lg bg-twitter/80 py-2 px-4'>
 						<input type="text" ref={imageInputRef}
@@ -120,7 +120,6 @@ function TweetBox( { setTweets }: Props) {
 					<img src={image} alt=""
 					className='mt-10 h-40 w-full rounded-xl object-contain shadow-lg'/>
 				)}
-			</form>
 		</div>
 	</div>
   );
