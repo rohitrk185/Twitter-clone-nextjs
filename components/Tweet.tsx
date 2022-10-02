@@ -11,10 +11,11 @@ import { fetchComments } from '../utils/fetchComments'
 
 
 interface Props {
-    tweet: Tweet
+    tweet: Tweet,
+	tweets: Tweet[],
 }
 
-function Tweet({tweet}: Props) {
+function Tweet({tweet, tweets}: Props) {
 	if(!tweet.profileImg) {
 		tweet.profileImg = "https://links.papareact.com/gll";
 	}
@@ -34,7 +35,11 @@ function Tweet({tweet}: Props) {
 
 	useEffect(() => {
 		refreshComments();
-	}, [])
+	}, []);
+
+	useEffect(() => {
+		refreshComments();
+	}, [tweets]);
 	
 	// console.log(comments);
 
