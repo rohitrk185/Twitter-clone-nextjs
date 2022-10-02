@@ -25,8 +25,10 @@ function Tweet({tweet}: Props) {
 	const { data: session } = useSession();
 	
 	const refreshComments = async () => {
-		const comments: Comment[] = await fetchComments(tweet._id);
-		setComments(comments);
+		console.log(comments.length);
+		const comments_: Comment[] = await fetchComments(tweet._id);
+		console.log(comments.length);
+		setComments(comments_);
 	};
 
 	useEffect(() => {
