@@ -60,6 +60,7 @@ function Tweet({tweet}: Props) {
 		setInput(''),
 		setCommentBoxVisible(false);
 		refreshComments();
+		console.log('comment added and refresh done!');
 	};
 
   return (
