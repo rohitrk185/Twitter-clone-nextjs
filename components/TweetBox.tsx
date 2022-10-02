@@ -61,7 +61,7 @@ function TweetBox( { setTweets, handleRefresh }: Props) {
 		toast.success('Tweet Posted🤘', {
 			id: postToast,
 		});
-		handleRefresh();
+		// handleRefresh();
 		return json;
 	}
 
