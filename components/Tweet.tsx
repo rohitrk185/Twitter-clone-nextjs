@@ -55,6 +55,7 @@ function Tweet({tweet}: Props) {
 			body: JSON.stringify(comment),
 			method: 'POST',
 		});
+		console.log(result);
 
 		toast.success('Comment Posted!', {
 			id: commentToast,
@@ -62,7 +63,16 @@ function Tweet({tweet}: Props) {
 
 		setInput(''),
 		setCommentBoxVisible(false);
-		refreshComments();
+
+		const id = setTimeout(() => {
+			refreshComments();
+			cleartimeout();
+		}, 2000);
+
+		const cleartimeout = () => {
+			clearTimeout(id);
+		}
+
 		console.log('comment added and refresh done!');
 	};
 
